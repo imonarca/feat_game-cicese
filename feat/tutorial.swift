@@ -18,6 +18,7 @@ class tutorial:BuildWeb{
         ritmo=1.5
         tutorial=true
         startFile()
+        selectSpider2()
         startTutorial()
        
     }

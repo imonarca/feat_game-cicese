@@ -14,7 +14,12 @@ class fead3: feed{
         super.didMove(to: view)
         level=3
         ritmo=4
+        actividad="feed"
         selectSpider2()
+        selecWalking()
+        selecCons()
+        selecCuerpo()
+        selecComiendo()
         startFile()
         startGame()
     }

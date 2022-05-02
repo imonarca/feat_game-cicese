@@ -13,7 +13,9 @@ class free_1: free{
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         level=1
+        
         selectSpider2()
+        startVideoFree()
         startFile()
   
        

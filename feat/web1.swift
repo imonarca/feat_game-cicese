@@ -14,8 +14,11 @@ class web1: BuildWeb{
         super.didMove(to: view)
         level=1
         ritmo=1.5
+        speed1 = 1000
+        actividad="Build"
         if(haptic){
-            ritmo=2.5
+            ritmo=1.5
+            speed1 = 1000
         }
         selectSpider2()
         startFile()

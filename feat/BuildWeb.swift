@@ -21,7 +21,7 @@ class BuildWeb: GameDynamic {
     var folder:String="spider1"
     var textueN:String="spider"
     var OrigianlSize: CGSize?
-   
+    var speed1:CGFloat=1000
 
     override func didMove(to view: SKView) {
         print("buildweb haptic", haptic)
@@ -31,6 +31,8 @@ class BuildWeb: GameDynamic {
          */
         cont=0
         hapticManager = HapticManager()
+        
+       
         
         
        // animateSpider()
@@ -153,6 +155,7 @@ class BuildWeb: GameDynamic {
         if(level==0){
             let feed = web1(fileNamed:"BuildWeb")
             feed?.idParticipant=idParticipant
+            feed?.actividad="Build"
             feed?.haptic=haptic
            
             let transition = SKTransition.flipVertical(withDuration: 1.0)
@@ -206,9 +209,13 @@ class BuildWeb: GameDynamic {
     
     override func startTutorial(){
         print("startTutorial",haptic)
+        
         let position = puntos[index]
         index = index+1
-        
+        let nameVideo = idParticipant+actividad+""+String(level)+".mov"
+       /* videoCapture=videoController()
+        videoCapture.checkCameraPermissions()
+        videoCapture.didTapTakePhoto(nameVideo: nameVideo)*/
         let audio2 = SKAction.playSoundFileNamed("podemossentir.m4a", waitForCompletion: true)
         let audio3 = SKAction.playSoundFileNamed("atentos.m4a", waitForCompletion: true)
         let audio4 = SKAction.playSoundFileNamed("tocapantalla.m4a", waitForCompletion: true)
@@ -260,6 +267,8 @@ class BuildWeb: GameDynamic {
             
         let audio2 = SKAction.playSoundFileNamed("tocaVibracion.m4a", waitForCompletion: true)
         
+        let recompensa = SKAction.playSoundFileNamed("casiLogramos.m4a", waitForCompletion: true)
+        
         let timeTr = SKAction.run {
             self.timeAudio=self.getTime()
         }
@@ -283,11 +292,11 @@ class BuildWeb: GameDynamic {
             SKAction.wait(forDuration: ritmo)])
     
         
-        
+       
         self.run(SKAction.sequence([SKAction.wait(forDuration: 1),
             audio2,
             SKAction.wait(forDuration: 1),
-            pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,
+            pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern, SKAction.group([pattern,recompensa]),pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,
             SKAction.wait(forDuration: 0.5)]),
             completion:{self.finisHaptic=true;})
      
@@ -350,12 +359,13 @@ class BuildWeb: GameDynamic {
     
     override func startHapticT(){
         print("startAudio")
+        
         let audio1 = SKAction.run {
             self.hapticManager?.playSlice()
         }
         let audio = SKAction.playSoundFileNamed("piano2.wav", waitForCompletion: true)
             
-      
+        
         
         let timeTr = SKAction.run {
             self.timeAudio=self.getTime()
@@ -402,6 +412,8 @@ class BuildWeb: GameDynamic {
             self.hapticManager?.playSlice()
         }
         
+        let recompensa = SKAction.playSoundFileNamed("casiLogramos.m4a", waitForCompletion: true)
+        
         let timeTr = SKAction.run {
             self.timeAudio=self.getTime()
         }
@@ -428,7 +440,7 @@ class BuildWeb: GameDynamic {
         self.run(SKAction.sequence([SKAction.wait(forDuration: 1),
             audio2,
             SKAction.wait(forDuration: 1),
-            pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,
+            pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,SKAction.group([pattern,recompensa]),pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,pattern,
             SKAction.wait(forDuration: 0.5)]),
             completion:{self.finisHaptic=true;})
     }
@@ -438,20 +450,29 @@ class BuildWeb: GameDynamic {
       else {return}
       self.end=true
       archivoFead.closeFile()
-       
-      var audio=SKAction.playSoundFileNamed("piano2.wav", waitForCompletion: true)
+      print("finis level",level)
+      /*
+      if(level>0){
+          let nameVideo = idParticipant+actividad+""+String(level)+".mov"
+          videoCapture.didTapTakePhoto(nameVideo: nameVideo)
+      }*/
+      
+    
+      
+      var audioFin=SKAction.playSoundFileNamed("piano2.wav", waitForCompletion: true)
+      
+      
       if(level>0 && level<3){
-          audio=SKAction.playSoundFileNamed("finLevelBuild.m4a", waitForCompletion: true)
+          audioFin=SKAction.playSoundFileNamed("finLevelBuild.m4a", waitForCompletion: true)
       }else if (level==3)
       {
-          audio=SKAction.playSoundFileNamed("porfincomere.m4a.m4a", waitForCompletion: true)
+          print("AUDIO3")
+          audioFin=SKAction.playSoundFileNamed("finBuild.m4a", waitForCompletion: true)
       }
       
       let hablar = animatedSprite(for: spiderSpeakingFrames, key: "hablar", time: 0.6)
       
-      let nextA = SKAction.run {
-                      self.nextActivity()
-                  }
+   
       let position = CGPoint(x:0, y:0)
       var circle = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: 200, height: 200), cornerRadius: 200)
       let followCircle1 = SKAction.follow(circle.cgPath, asOffset: false, orientToPath: true, duration: 1.0)
@@ -479,7 +500,7 @@ class BuildWeb: GameDynamic {
       
       
       player.run(SKAction.repeatForever(hablar))
-      player.run(SKAction.sequence([restar,listo,followCircle1,cirlce1,followCircle2,cirlce2,followCircle3,cirlce3,followCircle4,cirlce4,restar,mm,audio,SKAction.wait(forDuration: 0.5),nextA]))
+      player.run(SKAction.sequence([restar,listo,followCircle1,cirlce1,followCircle2,cirlce2,followCircle3,cirlce3,followCircle4,cirlce4,restar,mm,audioFin,SKAction.wait(forDuration: 0.5),]),completion: {self.nextActivity()})
         
            
         
@@ -498,7 +519,7 @@ class BuildWeb: GameDynamic {
       let touch = lastTouch
         else { return }
         self.fiishAction=false
-        followPath(for: player, to: touch, speed: 1200.0)
+        followPath(for: player, to: touch, speed: speed1)
        
     
     }
@@ -514,9 +535,9 @@ class BuildWeb: GameDynamic {
         
         let pasos = SKAction.playSoundFileNamed("steps3.wav", waitForCompletion: true)
         
-        let caminar = animatedSprite(for: spiderWalkingFrames, key: "caminar", time:0.4)
-        sprite.removeAllActions()
-        sprite.run(SKAction.sequence([SKAction.group([pasos,caminar,followLine]), SKAction.group([pasos,caminar,reversedLine]),
+        let caminar = animatedSprite(for: spiderWalkingFrames, key: "caminar", time:0.3)
+        //sprite.removeAllActions()
+        sprite.run(SKAction.sequence([SKAction.group([pasos,followLine]), SKAction.group([pasos,reversedLine]),
             ]),
             completion:{
             sprite.position=self.startPosition;

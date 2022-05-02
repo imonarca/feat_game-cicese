@@ -48,7 +48,6 @@
 		D468E2C327175D1A00BBA215 /* quericocomi.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D468E2B627175D1800BBA215 /* quericocomi.m4a */; };
 		D468E2C427175D1A00BBA215 /* podemossentir.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D468E2B727175D1900BBA215 /* podemossentir.m4a */; };
 		D468E2C527175D1A00BBA215 /* mascomida.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D468E2B827175D1900BBA215 /* mascomida.m4a */; };
-		D468E2C727177F4400BBA215 /* piano2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D468E2C627177F4300BBA215 /* piano2.wav */; };
 		D468E2C92717DB0400BBA215 /* selectSpider.sks in Resources */ = {isa = PBXBuildFile; fileRef = D468E2C82717DB0400BBA215 /* selectSpider.sks */; };
 		D468E2CB2717E08C00BBA215 /* selectSpider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468E2CA2717E08C00BBA215 /* selectSpider.swift */; };
 		D468E2CF271DFB7100BBA215 /* SKPopMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468E2CE271DFB7100BBA215 /* SKPopMenu.swift */; };
@@ -69,9 +68,18 @@
 		D468FCC026CC6993006D9A12 /* intro.sks in Resources */ = {isa = PBXBuildFile; fileRef = D468FCBF26CC6993006D9A12 /* intro.sks */; };
 		D468FCFA26CC9CD8006D9A12 /* intro.swift in Sources */ = {isa = PBXBuildFile; fileRef = D468FCF926CC9CD8006D9A12 /* intro.swift */; };
 		D468FCFC26CCCE9C006D9A12 /* pngegg.png in Resources */ = {isa = PBXBuildFile; fileRef = D468FCFB26CCCE9C006D9A12 /* pngegg.png */; };
+		D469F2382744BBE1005B0A4F /* piano2.wav in Resources */ = {isa = PBXBuildFile; fileRef = D469F2372744BBE1005B0A4F /* piano2.wav */; };
+		D46A45E02739CECD0024668E /* finBuild.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D46A45DF2739CECD0024668E /* finBuild.m4a */; };
+		D46A45E2273B45A70024668E /* iniFree.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D46A45E1273B45A70024668E /* iniFree.m4a */; };
 		D46D8D0D271F802C00804DD4 /* steps3.wav in Resources */ = {isa = PBXBuildFile; fileRef = D46D8D0C271F802C00804DD4 /* steps3.wav */; };
 		D46D8D0F27210F1900804DD4 /* free_1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D8D0E27210F1900804DD4 /* free_1.swift */; };
 		D46D8D112721297600804DD4 /* constantes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D46D8D102721297600804DD4 /* constantes.swift */; };
+		D470B7F22733080000B65D59 /* VideoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D470B7F12733080000B65D59 /* VideoController.swift */; };
+		D470B7F627343F5F00B65D59 /* casiLogramos.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D470B7F527343F5E00B65D59 /* casiLogramos.m4a */; };
+		D470B7F827343F7D00B65D59 /* abirCofre.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D470B7F727343F7C00B65D59 /* abirCofre.m4a */; };
+		D470B7FA27343F8600B65D59 /* camino.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D470B7F927343F8600B65D59 /* camino.m4a */; };
+		D470B7FC27343F9800B65D59 /* graciasComida.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D470B7FB27343F9700B65D59 /* graciasComida.m4a */; };
+		D470B7FE273441B800B65D59 /* antes.m4a in Resources */ = {isa = PBXBuildFile; fileRef = D470B7FD273441B800B65D59 /* antes.m4a */; };
 		D4787A3826EFBEB100B22EEE /* settings.sks in Resources */ = {isa = PBXBuildFile; fileRef = D4787A3726EFBEB100B22EEE /* settings.sks */; };
 		D4787A3A26EFBEBD00B22EEE /* settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4787A3926EFBEBD00B22EEE /* settings.swift */; };
 /* End PBXBuildFile section */
@@ -138,7 +146,6 @@
 		D468E2B627175D1800BBA215 /* quericocomi.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = quericocomi.m4a; sourceTree = "<group>"; };
 		D468E2B727175D1900BBA215 /* podemossentir.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = podemossentir.m4a; sourceTree = "<group>"; };
 		D468E2B827175D1900BBA215 /* mascomida.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = mascomida.m4a; sourceTree = "<group>"; };
-		D468E2C627177F4300BBA215 /* piano2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = piano2.wav; sourceTree = "<group>"; };
 		D468E2C82717DB0400BBA215 /* selectSpider.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = selectSpider.sks; sourceTree = "<group>"; };
 		D468E2CA2717E08C00BBA215 /* selectSpider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = selectSpider.swift; sourceTree = "<group>"; };
 		D468E2CE271DFB7100BBA215 /* SKPopMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKPopMenu.swift; sourceTree = "<group>"; };
@@ -162,9 +169,18 @@
 		D468FCBF26CC6993006D9A12 /* intro.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = intro.sks; sourceTree = "<group>"; };
 		D468FCF926CC9CD8006D9A12 /* intro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = intro.swift; sourceTree = "<group>"; };
 		D468FCFB26CCCE9C006D9A12 /* pngegg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pngegg.png; sourceTree = "<group>"; };
+		D469F2372744BBE1005B0A4F /* piano2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = piano2.wav; path = ../../../Desktop/piano2.wav; sourceTree = "<group>"; };
+		D46A45DF2739CECD0024668E /* finBuild.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = finBuild.m4a; sourceTree = "<group>"; };
+		D46A45E1273B45A70024668E /* iniFree.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = iniFree.m4a; sourceTree = "<group>"; };
 		D46D8D0C271F802C00804DD4 /* steps3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = steps3.wav; sourceTree = "<group>"; };
 		D46D8D0E27210F1900804DD4 /* free_1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = free_1.swift; sourceTree = "<group>"; };
 		D46D8D102721297600804DD4 /* constantes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constantes.swift; sourceTree = "<group>"; };
+		D470B7F12733080000B65D59 /* VideoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoController.swift; sourceTree = "<group>"; };
+		D470B7F527343F5E00B65D59 /* casiLogramos.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = casiLogramos.m4a; sourceTree = "<group>"; };
+		D470B7F727343F7C00B65D59 /* abirCofre.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = abirCofre.m4a; sourceTree = "<group>"; };
+		D470B7F927343F8600B65D59 /* camino.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = camino.m4a; sourceTree = "<group>"; };
+		D470B7FB27343F9700B65D59 /* graciasComida.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = graciasComida.m4a; sourceTree = "<group>"; };
+		D470B7FD273441B800B65D59 /* antes.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = antes.m4a; sourceTree = "<group>"; };
 		D4787A3726EFBEB100B22EEE /* settings.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = settings.sks; sourceTree = "<group>"; };
 		D4787A3926EFBEBD00B22EEE /* settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -221,25 +237,39 @@
 				D468FCFB26CCCE9C006D9A12 /* pngegg.png */,
 				D42F672926D6C89F00CC2379 /* CHCSVParser.h */,
 				D42F672A26D6C89F00CC2379 /* CHCSVParser.m */,
-				D468FC6926CAD4CD006D9A12 /* AppDelegate.swift */,
-				D42F672526D6B31A00CC2379 /* saveData.swift */,
 				D468FC7126CAD4CD006D9A12 /* GameViewController.swift */,
+				D468FC6926CAD4CD006D9A12 /* AppDelegate.swift */,
+				D45793F92702C14800FE8B7A /* GameDynamic.swift */,
+				D42F672526D6B31A00CC2379 /* saveData.swift */,
 				D468FC6F26CAD4CD006D9A12 /* Main.swift */,
 				D468FCF926CC9CD8006D9A12 /* intro.swift */,
 				D468FC9B26CAD84B006D9A12 /* BuildWeb.swift */,
-				D468FCB326CB5AA7006D9A12 /* HapticManager.swift */,
-				D468FCBD26CC1779006D9A12 /* feed.swift */,
+				D466514B26FAE6F2006D919D /* tutorial.swift */,
 				D455D38E26CE1D570099539D /* web1.swift */,
 				D455D39026CE1F760099539D /* web2.swift */,
 				D455D39226CE1F890099539D /* web3.swift */,
+				D468FCB326CB5AA7006D9A12 /* HapticManager.swift */,
+				D468FCBD26CC1779006D9A12 /* feed.swift */,
+				D468E25F2705598A00BBA215 /* tutorialFeed.swift */,
 				D455D39426CE210C0099539D /* fead1.swift */,
 				D455D39626CE211D0099539D /* fead2.swift */,
 				D455D39826CE212F0099539D /* fead3.swift */,
 				D4787A3926EFBEBD00B22EEE /* settings.swift */,
-				D46D8D0C271F802C00804DD4 /* steps3.wav */,
 				D466513926F06D1F006D919D /* recompensa.swift */,
 				D466513F26F25A5A006D919D /* selectLevel.swift */,
 				D466514126F25FA2006D919D /* free.swift */,
+				D46D8D0E27210F1900804DD4 /* free_1.swift */,
+				D45793F727027FAD00FE8B7A /* MotionManager.swift */,
+				D468E2CA2717E08C00BBA215 /* selectSpider.swift */,
+				D468E2CE271DFB7100BBA215 /* SKPopMenu.swift */,
+				D46D8D102721297600804DD4 /* constantes.swift */,
+				2075A99A272C8CFF0082D863 /* caputreVideo.swift */,
+				D470B7F12733080000B65D59 /* VideoController.swift */,
+				D470B7FB27343F9700B65D59 /* graciasComida.m4a */,
+				D470B7F927343F8600B65D59 /* camino.m4a */,
+				D470B7F527343F5E00B65D59 /* casiLogramos.m4a */,
+				D470B7F727343F7C00B65D59 /* abirCofre.m4a */,
+				D46D8D0C271F802C00804DD4 /* steps3.wav */,
 				D468E2B027175D1600BBA215 /* atentos.m4a */,
 				D468E2B727175D1900BBA215 /* podemossentir.m4a */,
 				D468E2AF27175D1600BBA215 /* tocapantalla.m4a */,
@@ -247,11 +277,14 @@
 				D468E2AE27175D1500BBA215 /* seleccionaarana.m4a */,
 				D468E2B227175D1700BBA215 /* free.m4a */,
 				D42F674126D72CEA00CC2379 /* piano_1.m4a */,
-				D468E2C627177F4300BBA215 /* piano2.wav */,
 				D42F674326D72CEA00CC2379 /* finLevelBuild.m4a */,
+				D46A45E1273B45A70024668E /* iniFree.m4a */,
+				D469F2372744BBE1005B0A4F /* piano2.wav */,
 				D42F672F26D72CE800CC2379 /* porfincomere.m4a */,
+				D46A45DF2739CECD0024668E /* finBuild.m4a */,
 				D4503FF126EAB301004B6375 /* listo.m4a */,
 				D4503FF026EAB301004B6375 /* muchomejor.m4a */,
+				D470B7FD273441B800B65D59 /* antes.m4a */,
 				D468E2B627175D1800BBA215 /* quericocomi.m4a */,
 				D42F673E26D72CEA00CC2379 /* jala.m4a */,
 				D42F673C26D72CE900CC2379 /* AtentosCaeInsecto.m4a */,
@@ -264,6 +297,8 @@
 				D42F673426D72CE900CC2379 /* tocaVibracion.m4a */,
 				D468E2B827175D1900BBA215 /* mascomida.m4a */,
 				D42F672826D6C89E00CC2379 /* feat-Bridging-Header.h */,
+				D468FC7326CAD4CD006D9A12 /* Main.storyboard */,
+				D468FC7626CAD4D3006D9A12 /* Assets.xcassets */,
 				D468FC6B26CAD4CD006D9A12 /* Main.sks */,
 				D468FCBF26CC6993006D9A12 /* intro.sks */,
 				D468FCBB26CC1585006D9A12 /* feed.sks */,
@@ -271,20 +306,9 @@
 				D468FC9926CAD82B006D9A12 /* BuildWeb.sks */,
 				D4787A3726EFBEB100B22EEE /* settings.sks */,
 				D466513B26F06D3D006D919D /* recompensa.sks */,
-				D468FC7326CAD4CD006D9A12 /* Main.storyboard */,
-				D468FC7626CAD4D3006D9A12 /* Assets.xcassets */,
 				D466513D26F25914006D919D /* selectNivel.sks */,
 				D466514326F25FBB006D919D /* free.sks */,
-				D466514B26FAE6F2006D919D /* tutorial.swift */,
-				D45793F727027FAD00FE8B7A /* MotionManager.swift */,
-				D45793F92702C14800FE8B7A /* GameDynamic.swift */,
-				D468E25F2705598A00BBA215 /* tutorialFeed.swift */,
 				D468E2C82717DB0400BBA215 /* selectSpider.sks */,
-				D468E2CA2717E08C00BBA215 /* selectSpider.swift */,
-				D468E2CE271DFB7100BBA215 /* SKPopMenu.swift */,
-				D46D8D0E27210F1900804DD4 /* free_1.swift */,
-				D46D8D102721297600804DD4 /* constantes.swift */,
-				2075A99A272C8CFF0082D863 /* caputreVideo.swift */,
 			);
 			path = feat;
 			sourceTree = "<group>";
@@ -410,6 +434,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D46A45E02739CECD0024668E /* finBuild.m4a in Resources */,
 				D468FC7526CAD4CD006D9A12 /* Main.storyboard in Resources */,
 				D466513C26F06D3D006D919D /* recompensa.sks in Resources */,
 				D468E2BD27175D1A00BBA215 /* atentos.m4a in Resources */,
@@ -419,11 +444,14 @@
 				D468E2C227175D1A00BBA215 /* hambre.m4a in Resources */,
 				D42F675B26D72CEA00CC2379 /* finLevelBuild.m4a in Resources */,
 				D42F674C26D72CEA00CC2379 /* tocaVibracion.m4a in Resources */,
+				D470B7FA27343F8600B65D59 /* camino.m4a in Resources */,
 				D468FCBC26CC1585006D9A12 /* feed.sks in Resources */,
 				D468FCFC26CCCE9C006D9A12 /* pngegg.png in Resources */,
 				D468FC7726CAD4D3006D9A12 /* Assets.xcassets in Resources */,
 				D468FCC026CC6993006D9A12 /* intro.sks in Resources */,
 				D42F674726D72CEA00CC2379 /* porfincomere.m4a in Resources */,
+				D470B7F627343F5F00B65D59 /* casiLogramos.m4a in Resources */,
+				D46A45E2273B45A70024668E /* iniFree.m4a in Resources */,
 				D42F675426D72CEA00CC2379 /* AtentosCaeInsecto.m4a in Resources */,
 				D42F675526D72CEA00CC2379 /* acendente.m4a in Resources */,
 				D42F675126D72CEA00CC2379 /* JALAUnademisPatitas.m4a in Resources */,
@@ -433,17 +461,20 @@
 				D42F674A26D72CEA00CC2379 /* des.wav in Resources */,
 				D468FC6E26CAD4CD006D9A12 /* Actions.sks in Resources */,
 				D46D8D0D271F802C00804DD4 /* steps3.wav in Resources */,
+				D470B7F827343F7D00B65D59 /* abirCofre.m4a in Resources */,
 				D468E2BA27175D1A00BBA215 /* tocaQuita.m4a in Resources */,
 				D468E2BF27175D1A00BBA215 /* free.m4a in Resources */,
 				D466513E26F25914006D919D /* selectNivel.sks in Resources */,
 				D468E2C327175D1A00BBA215 /* quericocomi.m4a in Resources */,
+				D470B7FC27343F9800B65D59 /* graciasComida.m4a in Resources */,
 				D468E2BB27175D1A00BBA215 /* seleccionaarana.m4a in Resources */,
 				D42F675926D72CEA00CC2379 /* piano_1.m4a in Resources */,
 				D466514426F25FBB006D919D /* free.sks in Resources */,
 				D468E2C92717DB0400BBA215 /* selectSpider.sks in Resources */,
 				D42F675626D72CEA00CC2379 /* jala.m4a in Resources */,
 				D4787A3826EFBEB100B22EEE /* settings.sks in Resources */,
-				D468E2C727177F4400BBA215 /* piano2.wav in Resources */,
+				D469F2382744BBE1005B0A4F /* piano2.wav in Resources */,
+				D470B7FE273441B800B65D59 /* antes.m4a in Resources */,
 				D42F674D26D72CEA00CC2379 /* necesitodetuayuda.m4a in Resources */,
 				D4503FF226EB05C2004B6375 /* listo.m4a in Resources */,
 				D468E2C527175D1A00BBA215 /* mascomida.m4a in Resources */,
@@ -471,6 +502,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D470B7F22733080000B65D59 /* VideoController.swift in Sources */,
 				D455D39726CE211D0099539D /* fead2.swift in Sources */,
 				D46D8D0F27210F1900804DD4 /* free_1.swift in Sources */,
 				D468E2602705598A00BBA215 /* tutorialFeed.swift in Sources */,

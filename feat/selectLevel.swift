@@ -35,6 +35,7 @@ class selectLevel:GameDynamic{
                 feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
                 feed?.actividad="build"
+                feed?.level=1
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
                 feed?.scaleMode = .aspectFit
                 scene?.view?.presentScene(feed!, transition: transition)
@@ -44,6 +45,7 @@ class selectLevel:GameDynamic{
                 let feed = web2(fileNamed:"BuildWeb")
                 feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
+                feed?.level=2
                 feed?.actividad="build"
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
                 feed?.scaleMode = .aspectFit
@@ -54,6 +56,7 @@ class selectLevel:GameDynamic{
                 let feed = web3(fileNamed:"BuildWeb")
                 feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
+                feed?.level=3
                 feed?.actividad="build"
                 
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
@@ -66,6 +69,7 @@ class selectLevel:GameDynamic{
                 feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
                 feed?.actividad="feed"
+                feed?.level=1
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
                 feed?.scaleMode = .aspectFit
                 scene?.view?.presentScene(feed!, transition: transition)
@@ -73,6 +77,7 @@ class selectLevel:GameDynamic{
             }
             else if node.name=="feed2"{
                 let feed = fead2(fileNamed:"feed")
+                level=2
                 feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
                 feed?.actividad="feed"
@@ -83,6 +88,8 @@ class selectLevel:GameDynamic{
             }
             else if node.name=="feed3"{
                 let feed = fead3(fileNamed:"feed")
+                feed?.actividad="feed"
+                feed?.level=3
                 feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
@@ -92,6 +99,7 @@ class selectLevel:GameDynamic{
             }
             else if node.name=="free"{
                 let feed = selectSpider(fileNamed:"selectSpider")
+                level=1
                 feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
                 feed?.actividad="free"
@@ -114,9 +122,9 @@ class selectLevel:GameDynamic{
             }
             else if node.name=="intro"{
                 let feed = intro(fileNamed:"intro")
-                feed?.idParticipant="00"
+                //feed?.idParticipant="00"
                 feed?.haptic=true
-                feed?.level=1
+                level=1
               
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
                 feed?.scaleMode = .aspectFit

@@ -10,9 +10,11 @@ import SpriteKit
 
 class GameDynamic: SKScene{
     
-    var idParticipant:String="p1"
-    var level:Int=1
+    var level:Int=0
+    var idParticipant:String="1"
+    var actividad:String="web"
     let limit:Int = 10
+    
     var cont:Int=0
     var timeAudio:String=""
     var end:Bool=false
@@ -35,14 +37,14 @@ class GameDynamic: SKScene{
     var instruction2:Bool=false
     var spiderWalkingFrames: [SKTexture] = []
     var spiderSpeakingFrames: [SKTexture] = []
-    var actividad:String="web"
+    var timeInicio:Int=0
    
    
     func startFile(){
         print("se abrio archivo")
         iniGame=true
         archivoFead=saveData()
-        archivoFead.generatedCSVFile(for: idParticipant+"-"+actividad+""+String(level)+".csv")
+        archivoFead.generatedCSVFile(for: "p"+idParticipant+"-"+actividad+"-"+String(level)+".csv")
        
      }
     
@@ -200,8 +202,26 @@ class GameDynamic: SKScene{
         }
     }
     
+    func startVideoFree(){
+     /*
+            let nameVideo = idParticipant+actividad+""+String(level)+".mov"
+            videoCapture=videoController()
+            videoCapture.checkCameraPermissions()
+            videoCapture.didTapTakePhoto(nameVideo: nameVideo)
+        */
+    }
+    
     
     func startGame(){
+     
+        timeInicio=getTimeInt()
+        /*
+        if(level>0){
+            let nameVideo = idParticipant+actividad+""+String(level)+".mov"
+            videoCapture=videoController()
+            videoCapture.checkCameraPermissions()
+            videoCapture.didTapTakePhoto(nameVideo: nameVideo)
+        }*/
         print("feed level",level)
         if(haptic){
             self.startHaptic()
@@ -213,6 +233,7 @@ class GameDynamic: SKScene{
     
     func startTutorial(){
         print("feed level",level)
+ 
         if(haptic){
             self.startHapticT()
         }else{

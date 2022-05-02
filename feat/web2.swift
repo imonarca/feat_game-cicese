@@ -13,9 +13,12 @@ class web2: BuildWeb{
     override func didMove(to view: SKView) {
         super.didMove(to: view)
         level=2
-        ritmo=1.2
+        ritmo=0.5
+        speed1 = 2000
+        actividad="Build"
         if(haptic){
-            ritmo=2.5
+            ritmo=0.5
+            speed1 = 2000
         }
         selectSpider2()
         startFile()

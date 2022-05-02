@@ -52,16 +52,13 @@ class feed: GameDynamic {
         hapticManager = HapticManager()
         addChildrens()
    
-        consentradaFrames = buildAnimation(named: "concentrada", TextureName: "cons")
         
-        comerFrames = buildAnimation(named: "comer", TextureName: "comiendo")
-          var firstFrameTexture = comerFrames[0]
-            spider?.texture=firstFrameTexture
-          
-        cuerpoFrames = buildAnimation(named: "cara", TextureName: "cara")
+        
+        
+        
           
           circleFrames = buildAnimation(named: "circulo", TextureName: "circulo")
-          firstFrameTexture = circleFrames[0]
+          let firstFrameTexture = circleFrames[0]
           
           for child in circulos {
               child.texture=firstFrameTexture
@@ -79,13 +76,91 @@ class feed: GameDynamic {
        
     }
     
+    func selecWalking(){
+        if(level==2){
+            folder="spider2-"
+            textueN="spider2-"
+            
+        }
+        else if(level==3){
+           
+            folder="spider3-"
+            textueN="spider3-"
+        }
+        else{
+            folder="spider1-"
+            textueN="spider1-"
+        }
+        
+        spiderWalkingFrames=buildAnimation(named: folder+"c", TextureName: textueN+"c-")
+        spiderSpeakingFrames=buildAnimation(named: folder+"h", TextureName: textueN+"h-")
+    }
+    
+    func selecComiendo(){
+        if(level==2){
+            folder="spider2-comiendo"
+            textueN="spider2-comiendo"
+            
+        }
+        else if(level==3){
+           
+            folder="spider3-comiendo"
+            textueN="spider3-comiendo"
+        }
+        else{
+            folder="comer"
+            textueN="comiendo"
+        }
+        comerFrames = buildAnimation(named: folder, TextureName: textueN)
+          let firstFrameTexture = comerFrames[0]
+            spider?.texture=firstFrameTexture
+    }
+    
+    
+    func selecCons(){
+        if(level==2){
+            folder="spider2-cons"
+            textueN="spider2-cons"
+            
+        }
+        else if(level==3){
+           
+            folder="spider3-cons"
+            textueN="spider3-cons"
+        }
+        else{
+            folder="concentrada"
+            textueN="cons"
+        }
+        consentradaFrames = buildAnimation(named: folder, TextureName: textueN)
+    }
+    
+    func selecCuerpo(){
+        
+        if(level==2){
+            folder="spider2-cara"
+            textueN="spider2-cara"
+            
+        }
+        else if(level==3){
+           
+            folder="spider3-cara"
+            textueN="spider3-cara"
+        }else{
+            folder="cara"
+            textueN="cara"
+        }
+        
+      cuerpoFrames = buildAnimation(named: folder, TextureName: textueN)
+    }
+    
     func selectSpider2(){
         print("level", level)
         var nombre:String=""
         if(level<=1){
             folder="spider4-pies"
             textueN="spider4-pie-"
-            nombre="spider4-cara"
+            nombre="cara3"
         }
         else if(level==2){
             folder="spider2-pies"
@@ -104,8 +179,6 @@ class feed: GameDynamic {
  
         let  piesFrames = buildAnimation(named: folder, TextureName: textueN)
           
-       // spiderWalkingFrames=buildAnimation(named: folder+"-c", TextureName: textueN+"c-")
-        //spiderSpeakingFrames=buildAnimation(named: folder+"-h", TextureName: textueN+"h-")
         var i=0
         cuerpo?.texture=SKTexture(imageNamed: nombre)
         for node in spidy{
@@ -171,15 +244,14 @@ class feed: GameDynamic {
     func animationFinish(){
         end=true
         fiishAction=false
-        self.hideSpider()
-        self.spider?.zRotation=0
-        self.spider?.isHidden=false
-        let hablar = SKAction.animate(with: spiderSpeakingFrames,timePerFrame: 0.6,
-            resize: false,
-            restore: true)
-        self.spider?.run(SKAction.repeatForever(hablar))
         
-        let inst = SKAction.playSoundFileNamed("quericocomi.m4a", waitForCompletion: true)
+      
+        
+        var inst = SKAction.playSoundFileNamed("quericocomi.m4a", waitForCompletion: true)
+        
+        if(level==3){
+             inst = SKAction.playSoundFileNamed("graciasComida.m4a", waitForCompletion: true)
+        }
         
         
         self.run(SKAction.sequence([inst,SKAction.wait(forDuration: 0.5)]), completion: {self.finishgame()
@@ -325,7 +397,10 @@ class feed: GameDynamic {
     
     override func startTutorial(){
         print("startTutorial",haptic)
- 
+        let nameVideo = idParticipant+actividad+""+String(level)+".mov"
+        /*videoCapture=videoController()
+        videoCapture.checkCameraPermissions()
+        videoCapture.didTapTakePhoto(nameVideo: nameVideo)*/
         fiishAction=false
         let audio2 = SKAction.playSoundFileNamed("AtentosCaeInsecto.m4a", waitForCompletion: true)
         let audio3 = SKAction.playSoundFileNamed("JALAUnademisPatitas.m4a", waitForCompletion: true)
@@ -365,6 +440,9 @@ class feed: GameDynamic {
                 self.hapticManager?.playSplash2()
         }
         }
+        
+        let recompensa = SKAction.playSoundFileNamed("casiLogramos.m4a", waitForCompletion: true)
+        
         let audio2 = SKAction.playSoundFileNamed("jala.m4a", waitForCompletion: true)
         
         let audio = SKAction.playSoundFileNamed("piano2.wav", waitForCompletion: true)
@@ -391,11 +469,11 @@ class feed: GameDynamic {
         
         let pattern = SKAction.sequence([checkInstruction,addSonido,ranimation ,SKAction.wait(forDuration: ritmo)])
         
-      
+        
        
         self.run(SKAction.sequence([SKAction.wait(forDuration: 1),audio2, SKAction.wait(forDuration: 1),
             pattern,pattern,pattern,pattern,pattern,
-            pattern,pattern,pattern,pattern,pattern,
+            pattern,pattern,pattern,pattern,SKAction.group([pattern,recompensa]),
             pattern,pattern,pattern,pattern,pattern,
             pattern,pattern,pattern,pattern,pattern,
             
@@ -433,14 +511,16 @@ class feed: GameDynamic {
         
         let pattern = SKAction.sequence([addSonido,ranimation,checkInstruction ,SKAction.wait(forDuration: ritmo)])
         
-      
+        let recompensa = SKAction.playSoundFileNamed("casiLogramos.m4a", waitForCompletion: true)
+        
+        
        
         self.run(SKAction.sequence([SKAction.wait(forDuration: 1),audio2, SKAction.wait(forDuration: 1),
             pattern,pattern,pattern,pattern,pattern,
+            pattern,pattern,pattern,pattern,SKAction.group([pattern,recompensa]),
             pattern,pattern,pattern,pattern,pattern,
             pattern,pattern,pattern,pattern,pattern,
-            pattern,pattern,pattern,pattern,pattern,
-            pattern,pattern,pattern,pattern,pattern,
+            
             SKAction.wait(forDuration: 1)]),
             completion:{self.finisHaptic=true;})
         
@@ -548,12 +628,18 @@ class feed: GameDynamic {
     func finishgame(){
         
         archivoFead.closeFile()
+        /*
+        if(level>0){
+            let nameVideo = idParticipant+actividad+""+String(level)+".mov"
+            videoCapture.didTapTakePhoto(nameVideo: nameVideo)
+        }*/
       
         if(level==0){
             let feed = fead1(fileNamed:"feed")
             feed?.idParticipant=idParticipant
             feed?.haptic=haptic
-            feed?.actividad="feed"
+            feed?.actividad="build"
+            actividad="feed"
             let transition = SKTransition.flipVertical(withDuration: 1.0)
             feed?.scaleMode = .aspectFit
             scene?.view?.presentScene(feed!, transition: transition)
@@ -563,6 +649,7 @@ class feed: GameDynamic {
             feed?.haptic=haptic
             feed?.idParticipant=idParticipant
             feed?.actividad="free"
+           
             let transition = SKTransition.flipVertical(withDuration: 1.0)
             feed?.scaleMode = .aspectFit
             scene?.view?.presentScene(feed!, transition: transition)

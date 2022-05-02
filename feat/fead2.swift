@@ -15,7 +15,12 @@ class fead2: feed{
         level=2
         ritmo=4
         tipoAudio="des.m4a"
+        actividad="feed"
         selectSpider2()
+        selecCons()
+        selecCuerpo()
+        selecWalking()
+        selecComiendo()
         startFile()
         startGame()
     }

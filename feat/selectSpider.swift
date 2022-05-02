@@ -56,7 +56,7 @@ class selectSpider:GameDynamic{
     func openSpider(){
         
       
-        spider1?.removeAllActions()
+        //spider1?.removeAllActions()
        
        
         let ani2=animatedSprite(for: spider2Frames, key: "spider1", time: 0.8)
@@ -83,7 +83,6 @@ class selectSpider:GameDynamic{
                 feed?.actividad="free"
                 feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
-                feed?.startFile()
                 feed?.spiderS=1
                 print("spider1")
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
@@ -98,7 +97,7 @@ class selectSpider:GameDynamic{
                 feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
                 feed?.spiderS=2
-                feed?.selectSpider2()
+              // feed?.selectSpider2()
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
                 feed?.scaleMode = .aspectFit
                 scene?.view?.presentScene(feed!, transition: transition)
@@ -119,10 +118,10 @@ class selectSpider:GameDynamic{
                 print("spider4")
                 let feed = free_1(fileNamed:"free")
                 feed?.actividad="free"
-                feed?.idParticipant=idParticipant
+feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
                 feed?.spiderS=4
-                feed?.selectSpider2()
+               // feed?.selectSpider2()
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
                 feed?.scaleMode = .aspectFit
                 scene?.view?.presentScene(feed!, transition: transition)

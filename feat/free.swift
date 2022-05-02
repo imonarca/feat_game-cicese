@@ -54,7 +54,27 @@ class free:GameDynamic{
     }
     
     override func update(_ currentTime: TimeInterval) {
+        let time = getTimeInt()
+        print(time)
+        if(time>=120 && !end){
+            finishGame()
+        }
         
+    }
+    
+    func finishGame(){
+        end=true
+        archivoFead.closeFile()
+        /*
+        let nameVideo = idParticipant+actividad+""+String(level)+".mov"
+        videoCapture.didTapTakePhoto(nameVideo: nameVideo)*/
+        let intro = selectLevel(fileNamed:"selectNivel")
+        
+        intro?.haptic=haptic
+     
+        let transition = SKTransition.flipVertical(withDuration: 1.0)
+        intro?.scaleMode = .aspectFit
+        scene?.view?.presentScene(intro!, transition: transition)
     }
    
     func selectSpider2(){
@@ -85,8 +105,8 @@ class free:GameDynamic{
        
         cuerpoFrames = buildAnimation(named: folder, TextureName: textueN)
         //spider?.texture=cuerpoFrames[0]
-        
-        spider = SKSpriteNode(imageNamed: nombre)
+        //spider = SKSpriteNode()
+       spider = SKSpriteNode(imageNamed: nombre)
         spider?.position = CGPoint(x: 0, y: 0)
         OrigianlSize=CGSize(width: 469.7, height: 445.342)
         spider?.size=self.OrigianlSize!
@@ -94,6 +114,9 @@ class free:GameDynamic{
         print(cuerpoFrames[0])
         
         animateCara()
+        let audio2 = SKAction.playSoundFileNamed("iniFree.m4a", waitForCompletion: true)
+        self.run(audio2)
+        
     }
     
     func animateCara() {
@@ -200,6 +223,7 @@ class free:GameDynamic{
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
         shakeNodes(lineas, dur: 0.5)
         id+=1
         if (touch == touches.first?.location(in: self)){

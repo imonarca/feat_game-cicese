@@ -25,10 +25,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
-        print("back")
+      /*
         if(iniGame){
             archivoFead.closeFile()
-        }
+         
+        }*/
         
         
         

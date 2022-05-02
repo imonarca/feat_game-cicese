@@ -91,10 +91,12 @@ class settings: SKScene,UITextFieldDelegate{
            
             }
             else if (node.name=="select"){
-                removetext()
+                
                 let intro = selectLevel(fileNamed:"selectNivel")
-                intro?.idParticipant=returnText(for: IDName)
+                
                 intro?.haptic=haptic
+                intro?.idParticipant=returnText(for: IDName)
+                removetext()
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
                 intro?.scaleMode = .aspectFit
                 scene?.view?.presentScene(intro!, transition: transition)

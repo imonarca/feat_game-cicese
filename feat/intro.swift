@@ -42,16 +42,20 @@ class intro:GameDynamic{
             self.addLinesWeb()
         }
         
-        let triste = SKAction.sequence([.group([buildWeb]),
-                                        .wait(forDuration: 0.2),
-                                        .run {self.hideWeb()
-        }])
+        
            
         
         spider?.run(SKAction.repeatForever(hablar))
         followPath(for: spider!, from: spider!.position ,to:CGPoint(x: 0, y: -500) , speed: 300)
         
         let audio1 =  SKAction.playSoundFileNamed("hola.m4a", waitForCompletion: true)
+        
+        let antes =  SKAction.playSoundFileNamed("antes.m4a", waitForCompletion: true)
+        
+        let triste = SKAction.sequence([.group([antes,buildWeb]),
+            .wait(forDuration: 0.4),
+            .run {self.hideWeb()
+        }])
         
         spider?.run(SKAction.group([audio1,self.followLine!])
             ,completion: {self.spider?.zRotation=0})
@@ -90,8 +94,10 @@ class intro:GameDynamic{
     }
     
     func nextLevel(){
+        print("nextLevel")
         let BuildWeb = tutorial(fileNamed:"BuildWeb")
         BuildWeb?.idParticipant=idParticipant
+        BuildWeb?.actividad="build"
         BuildWeb?.haptic=haptic
         let transition = SKTransition.flipVertical(withDuration: 1.0)
         BuildWeb?.scaleMode = .aspectFit

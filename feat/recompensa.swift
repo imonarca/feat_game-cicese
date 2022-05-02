@@ -18,6 +18,7 @@ class recompensa:SKScene {
     var actividad:String="recompensa"
     var inicio:Int=0
     var contR:Int=1
+    var finish:Bool=false
     private var abrirFrames: [SKTexture] = []
     private var spiderFrames: [SKTexture] = []
     var spider: SKSpriteNode?
@@ -34,6 +35,11 @@ class recompensa:SKScene {
             }
           }
         }
+        
+        let audio1 =  SKAction.playSoundFileNamed("abirCofre.m4a", waitForCompletion: true)
+        self.run(audio1, completion:{
+            self.finish=true
+        } )
         
         animateNodes(cofre)
     }
@@ -74,6 +80,7 @@ class recompensa:SKScene {
         spiderFrames = buildAnimation(named: folder, TextureName: textureName)
     }
     
+  
     
     func removeActiones(_ nodes: [SKNode]){
         for (index, node) in nodes.enumerated() {
@@ -121,7 +128,7 @@ class recompensa:SKScene {
         
         for node in nodess{
         
-            if node.name=="re"{
+            if node.name=="re" && finish{
                 getFrames()
                 selecSpider2()
                 let abrir = SKAction.animate(with: abrirFrames,timePerFrame: 0.3,
@@ -170,7 +177,7 @@ class recompensa:SKScene {
             let feed = web2(fileNamed:"BuildWeb")
             feed?.idParticipant=idParticipant
             feed?.haptic=haptic
-            feed?.actividad="build"
+            actividad="Build"
             let transition = SKTransition.flipVertical(withDuration: 1.0)
             feed?.scaleMode = .aspectFit
             scene?.view?.presentScene(feed!, transition: transition)
@@ -179,7 +186,7 @@ class recompensa:SKScene {
             let feed = web3(fileNamed:"BuildWeb")
             feed?.idParticipant=idParticipant
             feed?.haptic=haptic
-            feed?.actividad="build"
+            actividad="Build"
             
             let transition = SKTransition.flipVertical(withDuration: 1.0)
             feed?.scaleMode = .aspectFit
@@ -187,9 +194,9 @@ class recompensa:SKScene {
         }
         if(level==3){
                 let feed = tutorialFeed(fileNamed:"feed")
-                feed?.idParticipant=idParticipant
+            feed?.idParticipant=idParticipant
                 feed?.haptic=haptic
-            feed?.actividad="build"
+                actividad="feed"
                 let transition = SKTransition.flipVertical(withDuration: 1.0)
                 feed?.scaleMode = .aspectFit
                 scene?.view?.presentScene(feed!, transition: transition)
@@ -208,7 +215,7 @@ class recompensa:SKScene {
             let feed = fead1(fileNamed:"feed")
             feed?.idParticipant=idParticipant
             feed?.haptic=haptic
-            feed?.actividad="feed"
+            actividad="feed"
             let transition = SKTransition.flipVertical(withDuration: 1.0)
             feed?.scaleMode = .aspectFit
             scene?.view?.presentScene(feed!, transition: transition)
@@ -218,7 +225,7 @@ class recompensa:SKScene {
             let feed = fead2(fileNamed:"feed")
             feed?.idParticipant=idParticipant
             feed?.haptic=haptic
-            feed?.actividad="feed"
+            actividad="feed"
             let transition = SKTransition.flipVertical(withDuration: 1.0)
             feed?.scaleMode = .aspectFit
             scene?.view?.presentScene(feed!, transition: transition)
@@ -227,7 +234,7 @@ class recompensa:SKScene {
             let feed = fead3(fileNamed:"feed")
             feed?.idParticipant=idParticipant
             feed?.haptic=haptic
-            feed?.actividad="feed"
+            actividad="feed"
             let transition = SKTransition.flipVertical(withDuration: 1.0)
             feed?.scaleMode = .aspectFit
             scene?.view?.presentScene(feed!, transition: transition)

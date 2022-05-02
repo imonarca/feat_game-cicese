@@ -9,3 +9,5 @@
 var archivoFead=saveData()
 var nameLevel:String="x"
 var iniGame:Bool=false
+//var videoCapture=videoController()
+
